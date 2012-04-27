@@ -10,15 +10,13 @@
   },
   "icons":
   { 
-    "16" : "icon48.png",
-    "48" : "icon48.png",
-	"128" : "icon48.png"
+    "48" : "icon48.png"
   },
+  
   "background_page": "bg.html",
    "background": {
-   // "page":"bg.html"
-   //"scripts":["bg.js"]
   },
+  
   "permissions": [
 	"tabs",
 	"notifications"
