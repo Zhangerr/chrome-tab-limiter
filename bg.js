@@ -25,15 +25,18 @@ chrome.windows.getAll({"populate":true},function(windows) {
 
 chrome.tabs.onCreated.addListener(function(tab) { 
 	tabnumber++;
+//	alert(JSON.stringify(tab));
 	chrome.browserAction.setBadgeText({"text":tabnumber +""});
  	if(tabnumber > maxtabs && activated) {
 		chrome.tabs.remove(tab.id);
+		//alert(tab.url);
 		var notification = webkitNotifications.createNotification(
 		'icon.png',  // icon url - can be relative
 		'Alert',  // notification title
 		'Tab limit exceeded.'  // notification body text
 		);
 		notification.show();
+		setTimeout(function() { notification.cancel();},4000);
 	}
 });
  
